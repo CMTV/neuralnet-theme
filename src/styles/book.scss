@@ -1,0 +1,131 @@
+@import 'const';
+
+section.content.book {
+    
+    /* Заголовок страницы */
+    .book-title {
+        margin: 0;
+        
+        font-size: 180%;
+        color: $dark-black-color;
+    }
+    
+    /* Описание учебника */
+    .book-description {
+        color: #333;
+        line-height: 1.5;
+        font-size: 103%;
+        text-align: justify;
+        
+        margin-bottom: 2em;
+    }
+    
+    .book-index {
+        .chapter {
+            border-top: 1px solid map_get($border-colors, default);
+            
+            padding: 1.5em 0;
+            
+            .title {
+                margin: 0;
+                
+                font-size: 180%;
+                
+                a {
+                    text-decoration: none;
+                    
+                    font-weight: 600;
+                    color: $dark-black-color;
+                    
+                    transition: color 0.15s;
+                    
+                    &:hover {
+                        color: $brand-color;
+                    }
+                }
+            }
+            
+            .description {
+                margin-top: 1em;
+                
+                color: $dark-black-color;
+                line-height: 1.5;
+                font-size: 103%;
+                text-align: justify;
+    
+                a {
+                    color: $brand-dark-color;//#3774CA;
+                    text-decoration: none;
+        
+                    transition: color 0.15s;
+        
+                    &:hover {
+                        text-decoration: underline;
+                    }
+        
+                    &:visited {
+                        color: #909;
+                    }
+                }
+            }
+            
+            .toc {
+                padding-top: 0.65em;
+                
+                padding-left: 21px;
+                
+                h3 {
+                    position: relative;
+                    
+                    margin: 0.35em 0;
+                    
+                    font-weight: normal;
+                    font-size: 120%;
+                    
+                    a {
+                        width: 100%;
+                        
+                        text-decoration: none;
+                        
+                        color: $dark-black-color;
+                        
+                        transition: color 0.15s;
+                        
+                        &:hover {
+                            color: $brand-color;
+                        }
+    
+                        &:before {
+                            position: absolute;
+        
+                            content: '';
+                            top: 11px;
+                            left: -20px;
+        
+                            width: 8px;
+                            height: 8px;
+        
+                            border-radius: 50%;
+                            background: transparent;
+        
+                            transition: background 0.15s;
+                        }
+    
+                        &:hover:before {
+                            background: $brand-color
+                        }
+                    }
+                    
+                    &.sub {
+                        padding-left: 1.5em;
+                        font-size: 105%;
+                    }
+                    
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

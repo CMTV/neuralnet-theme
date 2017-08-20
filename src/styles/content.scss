@@ -1,0 +1,47 @@
+@import 'const';
+
+section.content {
+    position: absolute;
+    
+    left: calc((100% - #{map_get($layouts, stretch)})/2);
+    top: header-height(full);
+    
+    @include layout(mobile) {
+        top: header-height(mobile);
+    }
+    
+    box-sizing: border-box;
+    
+    width: $content-width;
+    
+    background: #fff;
+    
+    padding-top: $structure-margin;
+    padding-right: $structure-margin/2;
+    padding-left: $mobile-structure-margin;
+    
+    @include layout(sidebar) {
+        padding: $mobile-structure-margin;
+    }
+    
+    .inner {
+        @import '_content';
+    }
+    
+    &._darker {
+        filter: brightness(50%);
+    }
+    
+    &:not(._sidebar-moving) {
+        transition: filter 0.25s;
+    }
+    
+    @include layout(stretch) {
+        width: calc(100% - #{map_get($layouts, stretch) - $content-width});
+        left: 0;
+    }
+    
+    @include layout(sidebar) {
+        width: 100%;
+    }
+}

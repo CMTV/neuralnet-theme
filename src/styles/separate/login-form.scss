@@ -1,0 +1,76 @@
+@import '../const';
+
+body {
+    #login {
+    
+        .message {
+            border-left-color: $brand-color;
+        }
+        
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            a {
+                background-image: url('../images/login-form-logotype.png');
+                
+                background-size: auto;
+                
+                width: 150px;
+                height: 150px;
+                
+                margin: 1em 0;
+            }
+        }
+        
+        #loginform {
+            margin-top: 0;
+            
+        }
+    
+        .button.button-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            height: 40px;
+        
+            font-size: 115%;
+        
+            padding: 0 20px;
+        
+            border-radius: 3px;
+        
+            box-sizing: border-box;
+        
+            text-decoration: none;
+        
+            transition: color 0.25s, background 0.25s, border 0.25s;
+        
+            color: #fff;
+            border: 1px solid $brand-color;
+            background: $brand-color;
+        
+            box-shadow: none;
+            text-shadow: none;
+        
+            &:hover {
+                border-color: $brand-dark-color;
+                background: $brand-dark-color;
+            }
+        }
+    
+        input[type=text]:focus, input[type=search]:focus, input[type=radio]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, select:focus, textarea:focus {
+            border-color: $brand-color;
+        }
+        
+        a {
+            box-shadow: none !important;
+            
+            &:hover {
+                color: $brand-color !important;
+            }
+        }
+    }
+}

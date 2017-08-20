@@ -1,0 +1,1 @@
+"use strict";jQuery(function(){jQuery(window).on("DOMContentLoaded load resize scroll",function(){})});

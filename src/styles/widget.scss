@@ -1,0 +1,208 @@
+@import 'const';
+
+aside {
+    .widget {
+        width: 100%;
+        
+        box-sizing: border-box;
+        
+        font-size: 90%;
+        background: #F4F8FD;
+        
+        margin-bottom: $structure-margin;
+        padding: 1.5em;
+        
+        h2, h3 {
+            margin: 0;
+            color: #646464;
+        }
+        
+        .widget-title {
+            font-size: 100%;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #245987;
+        }
+        
+        .widget-sep {
+            height: 1px;
+            width: 100%;
+            
+            margin: 1em 0;
+            
+            background: map_get($border-colors, widget-sep);
+            
+            &.strong {
+                background: map_get($border-colors, widget-sep-strong);
+            }
+            
+            &.dashed {
+                background: repeating-linear-gradient(
+                                to right,
+                                #E2E5E9,
+                                #E2E5E9 5px,
+                                #F4F8FD 5px,
+                                #F4F8FD 10px
+                );
+            }
+        }
+        
+        @include layout(sidebar) {
+            background: #fff;
+        }
+    }
+    
+    .ads {
+        overflow: hidden;
+    }
+    
+    /* Виджет "Что нового?" */
+    .latest-widget {
+        a {
+            text-decoration: none;
+        }
+        
+        .latest-news, .latest-article, .latest-chapter {
+            display: flex;
+            align-items: center;
+            
+            .icon {
+                font-size: 210%;
+                color: #646464;
+            }
+            
+            .info {
+                margin-left: 15px;
+                
+                h3 {
+                    font-size: 100%;
+                    font-weight: normal;
+                    color: #333;
+                    
+                    transition: color 0.15s;
+                }
+                
+                .publish-date {
+                    display: flex;
+                    align-items: center;
+                    
+                    margin-top: 3px;
+                    
+                    font-size: 90%;
+                    color: #646464;
+                    
+                    i {
+                        color: $additional-color;
+                    }
+                    
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+            }
+            
+            &:hover {
+                h3 {
+                    color: $brand-color;
+                }
+            }
+            
+            &.empty {
+                color: $additional-color;
+            }
+        }
+    }
+    
+    /* Виджет "Последние категории" */
+    .categories-widget {
+        display: flex;
+        flex-direction: column;
+        
+        .category {
+            text-decoration: none;
+            
+            .category-title {
+                color: #333;
+                font-size: 100%;
+                
+                transition: color 0.15s;
+            }
+            
+            &:hover {
+                .category-title {
+                    color: $brand-color;
+                }
+            }
+        }
+        
+        .see-all {
+            width: 100%;
+            text-decoration: none;
+            color: #245987;
+            
+            transition: color 0.15s;
+            
+            &:hover {
+                color: $brand-color;
+            }
+        }
+    }
+    
+    /* Виджет "Содержание" */
+    .toc-widget {
+        position:relative;
+    
+        margin-bottom: 0;
+        
+        display: flex;
+        flex-direction: column;
+        
+        .toc-item {
+            display: flex;
+            align-items: center;
+            
+            padding: 0.75em 0 0.75em 0.5em;
+            
+            text-decoration: none;
+            color: #333;
+            
+            transition: color 0.15s;
+            
+            &:first-of-type {
+                padding-top: 0;
+            }
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+            
+            &:before {
+                position: absolute;
+                
+                content: '';
+                left: 12px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: transparent;
+                
+                transition: background 0.35s;
+            }
+            
+            &._reading:before {
+                background: $brand-color;
+            }
+            
+            &:hover, &._reading {
+                color: $brand-color;
+            }
+            
+            &.h2 {
+                font-size: 110%;
+            }
+            
+            &.h3 {
+                margin-left: 1em;
+            }
+        }
+    }
+}

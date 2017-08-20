@@ -1,0 +1,383 @@
+@import 'const.scss';
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $header-z-index;
+    
+    box-sizing: border-box;
+    
+    width: 100%;
+    
+    background: $header-background-color;
+    
+    transition: box-shadow 0.25s;
+    
+    border-bottom: 1px solid map_get($border-colors, strong);
+    
+    /* Полоска в самом верху сайта */
+    .top-bar {
+        height: $top-bar-height;
+        background: $brand-color;
+    }
+    
+    /* Тень от шапки при прокрутке сайта */
+    &._scrolling {
+        box-shadow: $header-shadow;
+    }
+    
+    /* Сама шапка */
+    .header {
+        display: flex;
+        align-items: center;
+        
+        height: map_get($header-height, full);
+    
+        @include layout(mobile) {
+            height: map_get($header-height, mobile);
+        }
+        
+        /* Логотип */
+        .logotype {
+            width: 50px;
+            height: 50px;
+            
+            @include layout(mobile) {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Главное меню */
+        nav.main-menu {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            
+            @include layout(tablet) {
+                .menu-item span {
+                    display: none;
+                }
+            }
+            
+            @include layout(sidebar) {
+                .menu-item {
+                    display: none;
+                }
+            }
+        }
+        
+        /* Элемент главного меню */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            
+            height: 100%;
+            
+            padding: 0 1.3em;
+            
+            color: $neutral-black;
+            text-decoration: none;
+    
+            transition: background 0.25s, color 0.25s;
+            
+            span {
+                padding-left: 0.5em;
+            }
+            
+            i {
+                font-size: 125%;
+            }
+            
+            &:hover {
+                cursor: pointer;
+                color: $brand-color;
+                background: $brand-light-color;
+            }
+            
+            &.current {
+                color: $brand-color;
+            }
+            
+            &.logotype-item {
+                padding: 0 0.5em;
+                
+                @include layout(mobile) {
+                    flex: 1;
+                    justify-content: center;
+                    
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+            
+            &.profile-item {
+                padding: 0 0.65em;
+                padding-right: 0.85em;
+                
+                /*&._submenu-showing { // Подсветка элемента меню при вызове подменю
+                    color: $brand-color;
+                    background: $brand-light-color;
+                }*/
+                
+                span {
+                    padding: 0;
+                }
+            }
+            
+            &.login-registration-item {
+                display: none;
+                
+                @include layout(mobile) {
+                    display: flex;
+                }
+            }
+        }
+        
+        /* Кнопка вызова сайдбара */
+        .sidebar-button {
+            display: none;
+            
+            &.with-search {
+                @include layout(sidebar) {
+                    display: flex;
+                }
+                
+                @include layout(mobile) {
+                    display: none;
+                }
+            }
+            
+            &:not(.with-search) {
+                @include layout(mobile) {
+                    display: flex;
+                }
+            }
+            
+            &._sidebar-showing {
+                color: $brand-color;
+                background: $brand-light-color;
+            }
+        }
+        
+        /* Поле поиска */
+        .search-form {
+            flex: 1;
+            
+            display: flex;
+            align-content: center;
+            
+            padding-left: 0.65em;
+            
+            margin: 0;
+            
+            @include layout(mobile) {
+                display: none;
+            }
+            
+            .search-field {
+                flex: 1;
+    
+                height: 40px;
+    
+                font-size: inherit;
+                color: $neutral-black;
+    
+                box-sizing: border-box;
+    
+                border: 1px solid map_get($border-colors, strong);
+                border-bottom-left-radius: 3px;
+                border-top-left-radius: 3px;
+    
+                padding-left: 0.45em;
+    
+                transition: border-color 0.25s;
+    
+                &:focus {
+                    border-color: $brand-color;
+                }
+            }
+            
+            .search-submit {
+                height: 40px;
+                width: 40px;
+    
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                font-size: inherit;
+                color: $neutral-black;
+                background: #fff;
+    
+                border: 1px solid map_get($border-colors, strong);
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+    
+                transition: border-color 0.25s, color 0.25s;
+    
+                position: relative;
+                left: -1px;
+    
+                &:hover {
+                    cursor: pointer;
+                    border-color: $brand-color;
+                }
+            }
+    
+            &._focus .search-submit {
+                border-left-color: $brand-color;
+            }
+        }
+        
+        /* Регистрация/вход */
+        .login-registration {
+            padding-left: 0.65em;
+            
+            display: flex;
+            align-items: center;
+            
+            @include layout(mobile) {
+                display: none;
+            }
+            
+            .login, .registration {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                height: 40px;
+    
+                padding: 0.4em 0.6em;
+                
+                border-radius: 3px;
+                
+                box-sizing: border-box;
+                
+                text-decoration: none;
+                
+                transition: color 0.25s, background 0.25s, border 0.25s;
+            }
+    
+            .registration {
+                color: #fff;
+                border: 1px solid $brand-color;
+                background: $brand-color;
+                
+                &:hover {
+                    border-color: $brand-dark-color;
+                    background: $brand-dark-color;
+                }
+            }
+            
+            .login {
+                color: $neutral-black;
+                border: 1px solid map_get($border-colors, strong);
+                background: #fff;
+                
+                margin-left: 0.65em;
+                
+                margin-right: $structure-margin/2;
+                
+                &:hover {
+                    color: $brand-dark-color;
+                    border-color: $brand-color;
+                }
+            }
+        }
+        
+        /* Данные о пользователе */
+        .profile {
+            display: flex;
+            align-items: center;
+            
+            position: relative;
+            
+            height: 100%;
+            
+            padding-left: 0.65em;
+            
+            .avatar {
+                display: block;
+                
+                width: 40px;
+                height: 40px;
+    
+                @include layout(mobile) {
+                    width: 35px;
+                    height: 35px;
+                }
+                
+                border-radius: 50%;
+    
+                box-shadow: 0 0 1px 1px white, 0 0 0 1px map_get($border-colors, storng);
+                
+                margin-left: 1em;
+            }
+            
+            .profile-item {
+                @include layout(mobile) {
+                    .username {
+                        display: none;
+                    }
+                }
+            }
+            
+            .submenu {
+                display: none;
+                
+                font-size: 97%;
+                
+                position: absolute;
+                right: 0;
+                top: header-height(full) - 3px; // - 3px с учетом верхней полоски (2px) и нижней границы (1px)
+                
+                @include layout(mobile) {
+                    top: header-height(mobile) - 3px;
+                }
+                
+                background: $header-submenu-background-color;
+                
+                border: 1px solid map_get($border-colors, strong);
+                border-top-style: dashed;
+                
+                box-shadow: $header-submenu-shadow;
+                
+                box-sizing: border-box;
+                
+                .inner {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    color: $neutral-black;
+    
+                    padding: 0.5em;
+                    
+                    .submenu-item {
+                        color: inherit;
+                        text-decoration: none;
+        
+                        transition: color 0.25s;
+        
+                        padding: 0.25em 0;
+                        
+                        @include layout(mobile) {
+                            padding: 0.5em 0;
+                        }
+        
+                        span {
+                            margin-left: 0.7em;
+                            white-space: nowrap;
+                        }
+        
+                        &:hover {
+                            color: $brand-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

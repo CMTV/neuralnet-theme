@@ -1,0 +1,14 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    text-align: justify;
+    color: #333;
+    line-height: 1.5;
+    
+    max-width: 800px;
+    
+    /* Подпись к изображению */
+    .wp-caption-dd {
+        font-size: 90%;
+        color: #828282;
+    }
+}

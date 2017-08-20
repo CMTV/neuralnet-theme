@@ -1,0 +1,37 @@
+/* Ширина сайта в различных конфигурациях */
+$layouts: (
+        stretch: 1100px,
+        tablet: 965px,
+        sidebar: 800px,
+        mobile: 515px
+);
+
+/* Рассотяния между различными блоками контента */
+$structure-margin: 20px;
+$mobile-structure-margin: 15px;
+
+/* Ширина контента сайта */
+$content-width: 800px;
+
+/* Сокращение для медиа-запроса типа 'max-width'. Может принимать только значения из $layouts! */
+@mixin layout($layout-key) {
+    @media (max-width: map_get($layouts, $layout-key)) {
+        @content;
+    }
+}
+
+/* Стили для сайта, открытого в максимальную ширину */
+@mixin layout-full {
+    @media (min-width: map_get($layouts, stretch)) {
+        @content;
+    }
+}
+
+/* Цвета */
+@import '_colors.scss';
+
+/* Константы для шапки сайта */
+@import '_header';
+
+/* Константы для сайдбара */
+@import '_aside';
