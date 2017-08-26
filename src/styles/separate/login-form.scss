@@ -28,7 +28,7 @@ body {
             margin-top: 0;
             
         }
-    
+        
         .button.button-primary {
             display: flex;
             align-items: center;
@@ -71,6 +71,10 @@ body {
             &:hover {
                 color: $brand-color !important;
             }
+        }
+    
+        #reg_passmail {
+            margin-top: 1em;
         }
     }
 }

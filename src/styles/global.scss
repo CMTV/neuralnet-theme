@@ -39,7 +39,7 @@ body, textarea {
 }
 
 /* Корректное отображение заголовков с учетом плавающей шапки */
-:target:before {
+:not(#comments):target:before {
     content: '';
     display: block;
     visibility: hidden;

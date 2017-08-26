@@ -391,7 +391,19 @@
     
     /* Жирный текст */
     strong {
+        word-wrap: break-word;
         font-weight: 600;
+    }
+    
+    /* Таблицы */
+    table, .su-table table {
+        @include layout(tablet) {
+            td {
+                padding: 0.25em 0.5em !important;
+            }
+            
+            font-size: 83% !important;
+        }
     }
     
     /* Важные моменты */
@@ -496,6 +508,17 @@
                 }
             }
         }
+    }
+    
+    /* Горизонтальная черта */
+    hr {
+        width: 100%;
+        height: 1px;
+        background-color: map_get($border-colors, strong);
+        
+        padding: 0;
+        border: 0;
+        margin: 0.5em 0;
     }
     
     /* Заголовки */

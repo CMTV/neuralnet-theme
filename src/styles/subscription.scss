@@ -1,0 +1,64 @@
+@import 'const';
+
+/* Виджет */
+.tnp-widget {
+    /* Подтверждение подписки */
+    input[type=submit].tnp-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        height: 40px;
+    
+        padding: 0.4em 0.6em;
+    
+        border-radius: 3px;
+    
+        box-sizing: border-box;
+    
+        text-decoration: none;
+    
+        transition: color 0.25s, background 0.25s, border 0.25s;
+    
+        color: #fff;
+        border: 1px solid $brand-color;
+        background: $brand-color;
+    
+        &:hover {
+            cursor: pointer;
+            border-color: $brand-dark-color;
+            background: $brand-dark-color;
+        }
+    }
+    
+    .tnp-field:last-of-type {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Выбор типа уведомлений */
+    .tnp-lists {
+        margin-bottom: 1em;
+    }
+    
+    .tnp-field-email {
+        margin-top: 1em;
+        
+        label {
+            color: #646464;
+            font-size: 95%;
+            margin-bottom: 0.5em;
+        }
+        
+        input {
+            border-color: map_get($border-colors, strong);
+    
+            background-color: #fff !important;
+            
+            transition: border-color 0.25s;
+            
+            &:focus {
+                border-color: $brand-color;
+            }
+        }
+    }
+}

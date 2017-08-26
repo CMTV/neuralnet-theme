@@ -12,17 +12,18 @@
 
 </script>
 
-<!-- Yandex.Metrika счетчик -->
+<!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
             try {
-                w.yaCounter37127760 = new Ya.Metrika({
-                    id:37127760,
+                w.yaCounter45687162 = new Ya.Metrika({
+                    id:45687162,
                     clickmap:true,
                     trackLinks:true,
                     accurateTrackBounce:true,
-                    webvisor:true
+                    webvisor:true,
+                    trackHash:true
                 });
             } catch(e) { }
         });
@@ -39,7 +40,7 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/37127760" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/45687162" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
 </body>
