@@ -48,6 +48,13 @@
 		if(is_front_page()) {
 			dynamic_sidebar('sidebar-neuralnet-home');
 			?>
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
+
+            <!-- VK Widget -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 3, color2: '333', width: 'auto'}, 152566074);
+            </script>
             <section class="ads">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- NeuralNet - Низ сайдбара 1 -->
@@ -66,6 +73,13 @@
 		} else {
 			dynamic_sidebar('sidebar-neuralnet-news');
 			?>
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
+
+            <!-- VK Widget -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 3, color2: '333', width: 'auto'}, 152566074);
+            </script>
             <section class="ads">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- NeuralNet - Низ сайдбара 1 -->

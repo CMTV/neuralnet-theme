@@ -1,0 +1,168 @@
+@import 'const';
+
+section.content {
+
+    /* Форма финансовой поддержки автора */
+    #donation-form {
+        border: 1px solid map-get($border-colors, strong);
+        border-radius: 3px;
+
+        max-width: 350px;
+
+        margin: 0.5em auto;
+        margin-top: 2em;
+
+        padding: $structure-margin;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        box-shadow: 2px 2px 4px -3px rgba(0,0,0,.3);
+
+        /* Сумма для получения и поле комментария */
+        .sum-and-comment {
+            display: flex;
+
+            position: relative;
+
+            margin-bottom: $structure-margin;
+
+            width: 100%;
+
+            input[type=text] {
+                padding: 0.65em 0.5em;
+
+                border: 1px solid map_get($border-colors, default);
+                border-radius: 3px;
+
+                font-size: 100%;
+
+                box-sizing: border-box;
+
+                transition: border-color 0.15s, box-shadow 0.15s;
+
+                &:focus {
+                    border-color: $brand-color;
+                }
+
+                &:hover:not(:focus) {
+                    border-color: map_get($border-colors, strong);
+                    box-shadow: 0 0 0 1.5px rgba(0,0,0,0.035);
+                }
+            }
+
+            i.ruble {
+                position: absolute;
+
+                color: #333;
+                font-size: 115%;
+
+                left: 82px;
+                top: 16px;
+
+                &:hover {
+                    cursor: text;
+                }
+            }
+
+            input[name=sum] {
+                width: 107px;
+                margin-right: 0.76em;
+
+                font-size: 110%;
+                font-family: monospace, monospace;
+
+                box-sizing: border-box;
+
+                padding-right: 1.75em;
+            }
+
+            input[name=comment] {
+                width: auto;
+                min-width: 10px;
+                flex: 1;
+            }
+        }
+
+        .payment-types {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            width: 100%;
+
+            margin-bottom: $structure-margin;
+
+            .payment-type {
+                width: 90px;
+                height: 45px;
+
+                padding: 0 0.5em;
+
+                border: 1px solid map_get($border-colors, default);
+                border-radius: 3px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                transition: border-color 0.15s, box-shadow 0.15s;
+
+                &:hover {
+                    cursor: pointer;
+                    border-color: map_get($border-colors, strong);
+                    box-shadow: 0 0 0 1.5px rgba(0,0,0,0.035);
+                }
+
+                &._selected {
+                    border-color: $brand-color;
+                    background: #F3F8FF;
+
+                    &:hover {
+                        box-shadow: 0 0 0 1.5px rgba(243,248,255,0.035);
+                    }
+                }
+
+                img {
+                    border: none;
+                }
+            }
+        }
+
+        button[type=submit] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 50px;
+
+            width: 100%;
+            padding: 0.4em 1.5em;
+
+            border-radius: 3px;
+
+            box-sizing: border-box;
+
+            text-decoration: none;
+
+            transition: color 0.25s, background 0.25s, border 0.25s;
+
+            color: #fff;
+            border: 1px solid $brand-color;
+            background: $brand-color;
+
+            font-size: 100%;
+
+            i {
+                padding-right: 0.75em;
+            }
+
+            &:hover {
+                cursor: pointer;
+                border-color: $brand-dark-color;
+                background: $brand-dark-color;
+            }
+        }
+    }
+}

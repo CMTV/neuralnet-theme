@@ -113,41 +113,6 @@ aside {
         }
     }
     
-    /* Виджет "Последние категории" */
-    .categories-widget {
-        display: flex;
-        flex-direction: column;
-        
-        .category {
-            text-decoration: none;
-            
-            .category-title {
-                color: #333;
-                font-size: 100%;
-                
-                transition: color 0.15s;
-            }
-            
-            &:hover {
-                .category-title {
-                    color: $brand-color;
-                }
-            }
-        }
-        
-        .see-all {
-            width: 100%;
-            text-decoration: none;
-            color: #245987;
-            
-            transition: color 0.15s;
-            
-            &:hover {
-                color: $brand-color;
-            }
-        }
-    }
-    
     /* Виджет "Содержание" */
     .toc-widget {
         position:relative;
@@ -204,5 +169,80 @@ aside {
                 margin-left: 1em;
             }
         }
+    }
+    
+    /* Виджет "Вспомогательное меню" */
+    .additional-menu-widget {
+        display: flex;
+        flex-direction: column;
+        
+        .widget-sep {
+            margin: 0;
+            
+            &.strong {
+                margin-top: 1em;
+            }
+        }
+        
+        a {
+            padding: 0.75em 0;
+            
+            @include layout(mobile) {
+                padding: 1em 0;
+            }
+            
+            text-decoration: none;
+            color: #333;
+            
+            transition: color 0.15s;
+            
+            &:hover {
+                color: $brand-color;
+            }
+            
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    /* Виджет "Поддержать портал" */
+    .donation-button-widget {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 50px;
+
+        padding: 0.4em 0.6em;
+
+        border-radius: 3px;
+
+        box-sizing: border-box;
+
+        text-decoration: none;
+
+        transition: color 0.25s, background 0.25s, border 0.25s;
+
+        color: #fff;
+        border: 1px solid $brand-color;
+        background: $brand-color;
+
+        i {
+            padding-right: 0.75em;
+        }
+
+        margin-bottom: $structure-margin;
+
+        &:hover {
+            cursor: pointer;
+            border-color: $brand-dark-color;
+            background: $brand-dark-color;
+        }
+    }
+
+    /* Группа ВКонтакте */
+    #vk_groups {
+        margin-bottom: $structure-margin;
     }
 }

@@ -15,7 +15,7 @@ function neuralnet_header_anchors($content) {
 	];
 
 	$content = preg_replace_callback('/<(h\d)>(.+)<\/h\d>/', function ($matches) use (&$NEURALNET_TOC, $post) {
-		$header_id = preg_replace('/[^-\p{L}0-9]+/u', '', preg_replace('/\s/', '-', $matches[2]));
+		$header_id = preg_replace('/[^-\p{L}0-9]+/u', '', preg_replace('/\s/', '-', strip_tags($matches[2])));
 		$link_to_anchor = get_permalink($post) . '#' . $header_id;
 
 		/* Проверка на дубликаты */

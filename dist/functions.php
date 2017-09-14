@@ -13,6 +13,7 @@ require_once 'includes/book.php';
 require_once 'includes/tinymce.php';
 require_once 'includes/toc.php';
 require_once 'includes/login-form.php';
+require_once 'includes/donate-shortcode.php';
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Базовая настройка */
@@ -22,7 +23,7 @@ function neuralnet_init() {
 	/* Что тема поддерживает/не поддерживает */
 	add_theme_support('html5');
 	add_theme_support('widgets');
-	remove_theme_support('menus');
+	add_theme_support('menus');
 
 	/* Страницы "Новости" и "Оглавление учебника" */
 	if(!neuralnet_page_exists('news')) {
@@ -79,7 +80,8 @@ add_action('widgets_init', 'neuralnet_sidebars');
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 require_once 'widgets/NEURALNET_Latest_PAC_Widget.php';
-require_once 'widgets/NEURALNET_Latest_Categories_Widget.php';
+require_once 'widgets/NEURALNET_Additional_Menu_Widget.php';
+require_once 'widgets/NEURALNET_Donation_Widget.php';
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Подключение стилей и скриптов */

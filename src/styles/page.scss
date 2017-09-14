@@ -1,0 +1,12 @@
+.page section.content {
+    
+    /* Сокрытие даты публикации */
+    .publish-date {
+        display: none;
+    }
+    
+    /* Сокрытие иконки */
+    .title .type-icon {
+        display: none;
+    }
+}

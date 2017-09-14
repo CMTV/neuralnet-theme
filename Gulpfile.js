@@ -86,7 +86,7 @@ gulp.task('clean-dist', () => {
 /* Удаление всех файлов из папки локального сервера */
 /* ------------------------------------------------------------------------------------------------------------------ */
 gulp.task('clean-dist-server', () => {
-    return gulp.src('C:\\OpenServer\\domains\\neuralnet.info.loc\\wp-content\\themes\\neuralnet', {read: false})
+    return gulp.src('C:\\OSPanel\\domains\\neuralnet.info.loc\\wp-content\\themes\\neuralnet', {read: false})
         .pipe(clean({force: true}));
 });
 
@@ -98,7 +98,7 @@ gulp.task('clean', ['clean-dist', 'clean-dist-server']);
 gulp.task('move-to-destination', () => {
     return gulp.src('dist/**/*')
         .pipe(gulp.dest(
-            'C:\\OpenServer\\domains\\neuralnet.info.loc\\wp-content\\themes\\neuralnet'
+            'C:\\OSPanel\\domains\\neuralnet.info.loc\\wp-content\\themes\\neuralnet'
         ));
 });
 

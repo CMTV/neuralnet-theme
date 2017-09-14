@@ -52,6 +52,8 @@
         input {
             border-color: map_get($border-colors, strong);
     
+            border-radius: 3px;
+            
             background-color: #fff !important;
             
             transition: border-color 0.25s;

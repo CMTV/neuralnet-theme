@@ -9,26 +9,26 @@
 /* ================================================================================================================== */
 
 @font-face {
-    font-family: 'icons';
-    src:  url('fonts/icons/icons.eot?k58t7q');
-    src:  url('fonts/icons/icons.eot?k58t7q#iefix') format('embedded-opentype'),
-    url('fonts/icons/icons.ttf?k58t7q') format('truetype'),
-    url('fonts/icons/icons.woff?k58t7q') format('woff'),
-    url('fonts/icons/icons.svg?k58t7q#icons') format('svg');
+    font-family: 'NeuralNetIcons';
+    src:  url('fonts/icons/NeuralNetIcons.eot?d1tfy4');
+    src:  url('fonts/icons/NeuralNetIcons.eot?d1tfy4#iefix') format('embedded-opentype'),
+    url('fonts/icons/NeuralNetIcons.ttf?d1tfy4') format('truetype'),
+    url('fonts/icons/NeuralNetIcons.woff?d1tfy4') format('woff'),
+    url('fonts/icons/NeuralNetIcons.svg?d1tfy4#NeuralNetIcons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-i:not(.fa) {
+i {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icons' !important;
+    font-family: 'NeuralNetIcons' !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -38,6 +38,9 @@ i.arrow_forward:before {
     content: "\e901";
 }
 i.mode_comment:before {
+    content: "\e902";
+}
+i.thumbs-o-up:before {
     content: "\e900";
 }
 i.newspaper:before {
@@ -105,4 +108,13 @@ i.arrow-right2:before {
 }
 i.terminal:before {
     content: "\ea81";
+}
+i.rouble:before {
+    content: "\e903";
+}
+i.rub:before {
+    content: "\e903";
+}
+i.ruble:before {
+    content: "\e903";
 }

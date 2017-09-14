@@ -82,7 +82,7 @@ get_header();
                         ?>
 
                         <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5996ab0a659fd9a3"></script>
-                        <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"><div class="sep"></div><a href="<?php echo get_permalink(get_page_by_path('donate')); ?>" target="_blank" class="donation-button-footer"><i class="thumbs-o-up"></i><span>Поддержать портал!</span></a></div>
 
                         <?php
 
